@@ -15,7 +15,7 @@ import javax.validation.constraints.Size;
 public class Contact {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	
 	//House Number
@@ -48,19 +48,45 @@ public class Contact {
 	@NotNull
 	@Size(max = 10)
 	@Pattern(regexp ="^[a-zA-Z\s]+$")
-	private String fname;
+	private String firstname;
 	
 	//Last Name
 	@NotNull
 	@Size(max = 10)
 	@Pattern(regexp ="^[a-zA-Z\s]+$")
-	private String lname;
+	private String lastname;
 	
 	//Age
 	@NotNull
 	@NotBlank
 	@Pattern(regexp = "[0-9 ]+")
 	private String age;
+	
+	//Mobile
+	@NotNull
+	@NotBlank
+	@Pattern(regexp = "[0-9 ]+")
+	@Size(max = 12)
+	private String mobile;
+	
+	//Telephone
+	@Pattern(regexp = "[0-9 ]+")
+	@Size(max = 12)
+	private String telephone;
+	
+	//Fax
+	@Pattern(regexp = "[0-9 ]+")
+	@Size(max = 12)
+	private String fax;
+	
+	
+	public Integer getId() {
+		return id;
+	}
+
+	public void setId(Integer id) {
+		this.id = id;
+	}
 
 	public String getHouseNum() {
 		return houseNum;
@@ -94,22 +120,6 @@ public class Contact {
 		this.pin = pin;
 	}
 
-	public String getFname() {
-		return fname;
-	}
-
-	public void setFname(String fname) {
-		this.fname = fname;
-	}
-
-	public String getLname() {
-		return lname;
-	}
-
-	public void setLname(String lname) {
-		this.lname = lname;
-	}
-
 	public String getAge() {
 		return age;
 	}
@@ -117,7 +127,46 @@ public class Contact {
 	public void setAge(String age) {
 		this.age = age;
 	}
-	
-	
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public String getMobile() {
+		return mobile;
+	}
+
+	public void setMobile(String mobile) {
+		this.mobile = mobile;
+	}
+
+	public String getTelephone() {
+		return telephone;
+	}
+
+	public void setTelephone(String telephone) {
+		this.telephone = telephone;
+	}
+
+	public String getFax() {
+		return fax;
+	}
+
+	public void setFax(String fax) {
+		this.fax = fax;
+	}
+		
 
 }
